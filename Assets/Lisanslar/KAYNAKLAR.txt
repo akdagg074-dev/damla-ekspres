@@ -1,0 +1,20 @@
+Projede kullanilan hazir gorseller ve 3D modeller Kenney (www.kenney.nl) tarafindan
+Creative Commons CC0 (kamu mali) lisansiyla yayinlanmistir. Ticari ve egitim
+amacli serbestce kullanilabilir; kaynak gostermek zorunlu degildir.
+
+Kullanilan paketler:
+- Car Kit (3D)                : Assets/Modeller/Kenney/CarKit         -> su tankeri (pikap)
+- City Kit Commercial (3D)    : Assets/Modeller/Kenney/CityCommercial -> Damla Su deposu, apartmanlar
+- City Kit Suburban (3D)      : Assets/Modeller/Kenney/CitySuburban   -> musteri evleri
+- Background Elements Remastered (2D): Assets/Sprites/Kenney/Cevre, ArkaPlan
+- New Platformer Pack (2D)    : Assets/Sprites/Kenney/Zemin, Dekor, ArkaPlan
+- UI Pack (2D)                : Assets/Sprites/Arayuz (buton, panel, kaydirici, yildiz)
+                                Assets/Sesler (tik sesi)
+
+3D modeller, Scripts/Editor/ModelRender.cs ile yandan render edilip dis hat (outline)
+eklenerek 2D sprite'a cevrilir (Assets/Sprites/Render).
+
+Font: Paytone One (Google Fonts, SIL Open Font License 1.1) - Assets/Fontlar
+
+Not: Sprites/Arayuz, Sesler ve Fontlar altindaki "Resources" klasorleri Unity'nin
+calisma aninda dosya yukleyebilmesi (Resources.Load) icin gereklidir.

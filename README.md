@@ -38,17 +38,27 @@ Ekrandaki FREN / GAZ pedalları fare ve dokunmatikle de çalışır.
 
 ```
 Assets/
-  Scripts/Arac      AracKontrol (WheelJoint2D sürüş), SuTanki (su fiziği)
-  Scripts/Bolum     Bolumler (5 bölüm verisi + arazi üretimi), Kasis, Kopru, DamlaJeton
-  Scripts/Oyun      BolumYonetici (akış, HUD, duraklatma, sonuç), Kayit (kayıt + rozetler)
-  Scripts/Arayuz    Arayuz (tema), AnaMenu, BolumSecim
-  Scripts/Sistem    Sfx, Tus, Efekt, Kamera, Parallax, SahneGecis, Ayarlar
-  Editor            SahneKurucu (tüm sahneleri kurar), ModelRender (3D → 2D sprite)
-  Scenes            AnaMenu, BolumSecim, Bolum1–5
-  Prefabs           SuTankeri
-  Kenney            Kenney CC0 paketleri (modeller, sprite'lar) + lisanslar
-  Resources/UI      Kenney UI Pack parçaları, Paytone One fontu
+  Scenes             AnaMenu, BolumSecim, Bolum1–5
+  Scripts/Arac       AracKontrol (WheelJoint2D sürüş), SuTanki (su fiziği)
+  Scripts/Bolum      Bolumler (5 bölüm verisi + arazi üretimi), Kasis, Kopru, DamlaJeton
+  Scripts/Oyun       BolumYonetici (akış, HUD, duraklatma, sonuç), Kayit (kayıt + rozetler)
+  Scripts/Arayuz     Arayuz (tema), AnaMenu, BolumSecim
+  Scripts/Sistem     Sfx, Tus, Efekt, Kamera, Parallax, SahneGecis, Ayarlar
+  Scripts/Editor     SahneKurucu (tüm sahneleri kurar), ModelRender (3D → 2D sprite)
+  Sprites/Kenney     Arka plan, çevre, dekor ve zemin sprite'ları
+  Sprites/Render     3D modellerden üretilen tanker ve bina sprite'ları
+  Sprites/Uretilen   Kodla üretilen yardımcı sprite'lar (damla, tank, ikon…)
+  Sprites/Arayuz     Buton, panel, yıldız, kaydırıcı görselleri
+  Sesler             Arayüz sesleri (diğer sesler kodla üretilir)
+  Fontlar            Paytone One
+  Modeller/Kenney    3D modeller (pikap, binalar)
+  Modeller/Arazi     Bölüm arazi mesh'leri ve malzemeleri
+  Materyaller/Fizik  Lastik, zemin, gövde fizik malzemeleri
+  Prefabs            SuTankeri
+  Lisanslar          Kaynak ve lisans dosyaları
 ```
+
+`Sprites/Arayuz`, `Sesler` ve `Fontlar` altındaki `Resources` klasörleri, dosyaların oyun çalışırken `Resources.Load` ile yüklenebilmesi için gereklidir.
 
 Sahneler `Damla Ekspres > Tum Sahneleri Kur` menüsüyle yeniden üretilebilir.
 
@@ -59,4 +69,4 @@ Sahneler `Damla Ekspres > Tum Sahneleri Kur` menüsüyle yeniden üretilebilir.
 - Font: Paytone One (Google Fonts, SIL Open Font License 1.1).
 - Ses efektleri ve müzik kodla üretilir (`Sfx.cs`); arayüz tık sesi Kenney UI Pack'ten.
 
-Lisans dosyaları: `Assets/Kenney/Lisanslar/`.
+Lisans dosyaları: `Assets/Lisanslar/`.

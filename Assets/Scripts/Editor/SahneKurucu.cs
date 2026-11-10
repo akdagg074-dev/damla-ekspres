@@ -11,9 +11,9 @@ using UnityEngine;
 public static class SahneKurucu
 {
     const string Uret = "Assets/Sprites/Uretilen/";
-    const string KS = "Assets/Kenney/Sprites/";
+    const string KS = "Assets/Sprites/Kenney/";
     const string PrefabYolu = "Assets/Prefabs/SuTankeri.prefab";
-    const string FizikKlasor = "Assets/Fizik/";
+    const string FizikKlasor = "Assets/Materyaller/Fizik/";
     const string AraziKlasor = "Assets/Modeller/Arazi/";
     const float TankerUzunluk = 4f;   // oyun dunyasinda pikabin boyu (m)
     // Binalar yukari bakis acisi olmadan (yalnizca 25 derece yandan) render edilir: taban duz bir cizgidir.
@@ -91,12 +91,12 @@ public static class SahneKurucu
 
     public static void Kur()
     {
-        foreach (var k in new[] { "Assets/Prefabs", "Assets/Fizik", "Assets/Modeller", AraziKlasor.TrimEnd('/') })
+        foreach (var k in new[] { "Assets/Prefabs", FizikKlasor.TrimEnd('/'), "Assets/Modeller", AraziKlasor.TrimEnd('/') })
             Directory.CreateDirectory(k);
         Uretilenler();
         Renderler();
         AssetDatabase.Refresh();
-        foreach (var klasor in new[] { "Assets/Sprites", "Assets/Kenney/Sprites" })
+        foreach (var klasor in new[] { "Assets/Sprites" })
             foreach (var f in Directory.GetFiles(klasor, "*.png", SearchOption.AllDirectories))
                 AssetDatabase.ImportAsset(f.Replace('\\', '/'), ImportAssetOptions.ForceUpdate);
         Yukle();
@@ -124,7 +124,7 @@ public static class SahneKurucu
     }
 
     // ================================================================ 3D -> 2D render
-    static GameObject Model(string yol) { return AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Kenney/Modeller/" + yol + ".fbx"); }
+    static GameObject Model(string yol) { return AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Modeller/Kenney/" + yol + ".fbx"); }
 
     static void Renderler()
     {
@@ -187,7 +187,7 @@ public static class SahneKurucu
         tankArka = S(Uret + "tank_arka.png"); tankOn = S(Uret + "tank_on.png"); damla = S(Uret + "damla.png");
         tankerGovde = S(ModelRender.Klasor + "tanker_govde.png"); tankerTeker = S(ModelRender.Klasor + "tanker_teker.png");
         spriteMat = AssetDatabase.GetBuiltinExtraResource<Material>("Sprites-Default.mat");
-        font = AssetDatabase.LoadAssetAtPath<Font>("Assets/Resources/UI/Font/PaytoneOne-Regular.ttf") ?? Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        font = AssetDatabase.LoadAssetAtPath<Font>("Assets/Fontlar/Resources/UI/Font/PaytoneOne-Regular.ttf") ?? Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
     }
 
     static Sprite K(string yol) { return S(KS + yol + ".png"); }
@@ -890,8 +890,8 @@ public class SpriteAyarlari : AssetPostprocessor
     void OnPreprocessTexture()
     {
         string p = assetPath.Replace('\\', '/');
-        if (p.StartsWith("Assets/Kenney/Sprites/") || p.StartsWith("Assets/Sprites/Render/")) { Kenney(p); return; }
-        if (p.StartsWith("Assets/Resources/UI/"))
+        if (p.StartsWith("Assets/Sprites/Kenney/") || p.StartsWith("Assets/Sprites/Render/")) { Kenney(p); return; }
+        if (p.StartsWith("Assets/Sprites/Arayuz/"))
         {
             // OnGUI arayuz dokulari (9 dilimli panel/buton): mipmap yok, kenarlar keskin
             var ui = (TextureImporter)assetImporter;
