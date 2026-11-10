@@ -1,0 +1,16 @@
+Bu klasordeki tum gorseller ve 3D modeller Kenney (www.kenney.nl) tarafindan
+Creative Commons CC0 (kamu malı) lisansiyla yayinlanmistir. Ticari ve egitim
+amacli serbestce kullanilabilir; kaynak gostermek zorunlu degildir.
+
+Kullanilan paketler:
+- Car Kit (3D)                : Modeller/CarKit      -> su tankeri (pikap)
+- City Kit Commercial (3D)    : Modeller/CityCommercial -> Damla Su deposu, apartmanlar
+- City Kit Suburban (3D)      : Modeller/CitySuburban  -> musteri evleri
+- Background Elements Remastered (2D): Sprites/Cevre, Sprites/ArkaPlan
+- New Platformer Pack (2D)    : Sprites/Zemin, Sprites/Dekor, Sprites/ArkaPlan
+- UI Pack (2D)                : Assets/Resources/UI (buton, panel, kaydirici, yildiz, font, tik sesi)
+
+3D modeller, Editor/ModelRender.cs ile yandan render edilip dis hat (outline)
+eklenerek 2D sprite'a cevrilir (Assets/Sprites/Render).
+
+Font: Paytone One (Google Fonts, SIL Open Font License 1.1) - Assets/Resources/UI/Font
