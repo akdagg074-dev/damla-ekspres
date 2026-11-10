@@ -3,17 +3,18 @@ using UnityEngine;
 // Bolum secim ekrani: 5 bolum karti (arazi onizlemesi, zorluk, hedef, yildiz, en iyi skor, kilit).
 public class BolumSecim : MonoBehaviour
 {
-    float acilis, kilitMesajT;
+    float acilisBas = -1f, kilitMesajT;
 
     void Start()
     {
         Time.timeScale = 1f;
         Sfx.MuzikCal(Ayarlar.Muzik);
+        acilisBas = Time.realtimeSinceStartup;
     }
 
     void Update()
     {
-        acilis += Time.unscaledDeltaTime;
+        if (acilisBas < 0f) acilisBas = Time.realtimeSinceStartup;
         if (Tus.Ses()) Ayarlar.SessizDegistir();
         if (kilitMesajT > 0f) kilitMesajT -= Time.unscaledDeltaTime;
         if (Tus.KilitAc()) { Kayit.TumunuAc(); kilitMesajT = 2.5f; Sfx.Cal("basari", 0.6f); }
@@ -49,7 +50,7 @@ public class BolumSecim : MonoBehaviour
         float x0 = cx - (cw * n + gap * (n - 1)) * 0.5f;
         for (int i = 0; i < n; i++)
         {
-            float k = Mathf.Clamp01((acilis - i * 0.08f) * 4f);
+            float k = acilisBas < 0f ? 0f : Mathf.Clamp01((Time.realtimeSinceStartup - acilisBas - i * 0.08f) * 4f);
             float yy = 230f + (1f - k) * 80f;
             Kart(new Rect(x0 + i * (cw + gap), yy, cw, ch), i + 1, k);
         }

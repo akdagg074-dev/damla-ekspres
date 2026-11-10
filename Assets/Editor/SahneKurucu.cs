@@ -949,7 +949,7 @@ public class SpriteAyarlari : AssetPostprocessor
         string ad = Path.GetFileNameWithoutExtension(p);
         imp.mipmapEnabled = true;
         imp.alphaIsTransparency = true;
-        imp.textureCompression = TextureImporterCompression.Uncompressed;
+        imp.textureCompression = TextureImporterCompression.CompressedHQ;   // build boyutu icin (BC7), kalite kaybi yok denecek kadar az
         imp.filterMode = FilterMode.Trilinear;
 
         // zemin dokulari: mesh malzemesi olarak tekrarlanir
