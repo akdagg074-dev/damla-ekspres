@@ -6,6 +6,7 @@ Damla Su Dağıtım A.Ş.'nin su tankerini depodan müşteriye sür, tanktaki su
 Unity 6 (6000.3.22f1) ile geliştirilmiş 2D, fizik tabanlı bir sürüş oyunu.
 
 - **Tarayıcıda oyna (WebGL):** https://akdagg074-dev.github.io/damla-ekspres/
+- **Oyun Tasarım Dokümanı:** [Docs/DamlaEkspres_GDD.pdf](Docs/DamlaEkspres_GDD.pdf)
 - **Windows sürümü:** `DamlaEkspres.exe` (USB teslimindeki `Build_Windows` klasörü)
 
 ## Kontroller
